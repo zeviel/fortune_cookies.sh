@@ -5,6 +5,7 @@ sign=null
 vk_user_id=null
 vk_ts=null
 vk_ref=null
+user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36"
 
 function authenticate() {
 	# 1 - sign: (string): <sign>
@@ -29,7 +30,7 @@ function get_available_cookie() {
 	# 1 - is_ae_cookie_seen: (boolean): <true. false - default: false>
 	curl --request PATCH \
 		--url "$api/cookie_available/owner" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "x-vk-sign: $params" \
 		--data '{
@@ -41,7 +42,7 @@ function open_cookie() {
 	# 1 - is_ae_cookie: (boolean): <true. false - default: false>
 	curl --request PATCH \
 		--url "$api/open/owner" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "x-vk-sign: $params" \
 		--data '{
@@ -52,7 +53,7 @@ function open_cookie() {
 function get_payment_items() {
 	curl --request GET \
 		--url "$api/payment/items" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "x-vk-sign: $params"
 }
