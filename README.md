@@ -3,6 +3,6 @@ Web-API for [fortune cookies](https://vk.com/cookie_app) an vk service to get co
 
 ## Example
 ```bash
-source fortune_cookies.sh
+source ./fortune_cookies.sh
 authenticate "sign" "vk_user_id" "vk_ts" "vk_ref"
 ```
